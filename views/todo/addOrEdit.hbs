@@ -1,0 +1,27 @@
+<h3 style="margin-top: 1%;">{{viewTitle}}</h3>
+
+<form action="/todo" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{todo._id}}">
+    <div class="form-group">
+        <label>
+            Task
+        </label>
+        <input type="text" class="form-control" name="task" placeholder="Task" value="{{todo.task}}" />
+        <div class="text-danger">
+            {{todo.taskError}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>
+            Notes
+        </label>
+        <input type="text" class="form-control" name="description" placeholder="Additional Notes"
+            value="{{todo.description}}" />
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-list-alt"> Add task </i></button>
+        <a class="btn btn-secondary" href="/todo/list"><i class="fa fa-arrow-left"></i> View All </a>
+    </div>
+</form>
